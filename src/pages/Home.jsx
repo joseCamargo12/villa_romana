@@ -8,7 +8,14 @@ const Home = () => {
         document.title = "Villa Romana"
     })
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        window.addEventListener('click', () => {
+            console.log('onClick')
+        })
+    })
+
+
+
     const { poductsData } = useGetProducts(15);
 
     return <ItemListContainer productsData={poductsData} />

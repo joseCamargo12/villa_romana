@@ -5,11 +5,14 @@ import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
 import { useGetCategories } from '../hooks/useProducts';
+import { useContext } from 'react';
+import { TestContext } from '../context/TestContext';
 
 
 const NavBar = () => {
 
     const {categories} = useGetCategories()
+    const {count} = useContext(TestContext)
 
     return(
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -38,7 +41,7 @@ const NavBar = () => {
               <Nav.Link href="#action2">Contacto</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <CartWidget />
+          <CartWidget count={count} />
         </Container>
       </Navbar>
     )
