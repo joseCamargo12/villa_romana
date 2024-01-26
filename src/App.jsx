@@ -1,15 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainRouter from './router/MainRouter';
-import { TestProvider } from './context/TestContext';
+import { CarProvider } from './context/CarContext';
+
 
 const App = () => {
-
   
   return (
     <div style={{width: '100vw', height: '100vh'}}>
-      <TestProvider>
+      <CarProvider>
         <MainRouter />
-      </TestProvider>
+      </CarProvider>
     </div>
   );
 }

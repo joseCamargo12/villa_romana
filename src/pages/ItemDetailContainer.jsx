@@ -1,16 +1,15 @@
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
 import { useGetProductById } from '../hooks/useProducts';
 import { useParams } from 'react-router-dom';
-
-
+import ItemCount from '../components/itemCount';
 
 
 const ItemDetailContainer = () => {
 
   const {id} = useParams()
 
-  const { productData } = useGetProductById(id);
+  const { productData } = useGetProductById('products',id);
 
 
   if (!productData) {
@@ -27,7 +26,8 @@ const ItemDetailContainer = () => {
         <Card.Title>{productData.title}</Card.Title>
         <Card.Text>{productData.description}</Card.Text>
         <div>${productData.price}</div>
-        <Button variant="primary">Agregar al carrito</Button>
+        <ItemCount productId={productData.id} />
+        <a href={`/update-product/${productData.id}`}>Editor</a>
       </Card.Body>
     </Card>
     </div>

@@ -16,7 +16,7 @@ const Home = () => {
 
 
 
-    const { poductsData } = useGetProducts(15);
+    const { poductsData } = useGetProducts('products');
 
     return <ItemListContainer productsData={poductsData} />
 }

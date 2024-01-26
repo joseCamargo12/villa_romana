@@ -1,8 +1,14 @@
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 const ItemListContainer = ({ productsData }) => {
+
+  // const handleClick = () => { 
+
+  //   console.log("clicking")
+  // };
+  
   return (
     <div style={{ display: 'flex', width: '100%', flexWrap: 'wrap', justifyContent: 'space-around', padding: '2rem' }}>
       {
@@ -18,7 +24,6 @@ const ItemListContainer = ({ productsData }) => {
                 <div>
                   ${products.price}
                 </div>
-                <Button variant="primary">Agregar al carrito</Button>
               </Card.Body>
             </Card>
           );
