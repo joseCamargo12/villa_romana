@@ -1,0 +1,55 @@
+body {
+    overflow-x: hidden;
+}
+
+.main-container {
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/* ItemDetailContainer.css */
+
+.item-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .custom-card {
+    width: 40rem;
+    margin: 20px;
+  }
+  
+  .price {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .buttons-container {
+    margin-top: 10px; /* Ajusta el valor según sea necesario */
+  }
+  
+  /* Footer */
+
+ /* Footer.css */
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  

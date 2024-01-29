@@ -2,42 +2,37 @@ import { useContext, useState } from "react"
 import { Button } from "react-bootstrap"
 import { CarContext } from "../context/CarContext"
 
-const ItemCount = (productId) => {
+const ItemCount = ({productId}) => {
 
-    const [countItem, setCountItem] = useState(0)
+    const [ countItem, setCountItem ] = useState(1)
     const { count, setCount } = useContext(CarContext);
 
     const handleAdd = () => {
         setCountItem(countItem + 1);
-        setCount(count + countItem)
     }
 
     const handleRemove = () => {
-        if (countItem !== 0) {
-            setCountItem(countItem - 1);
-            setCount(count - 1); // Resta 1 al valor actual de count
-        }
+        setCountItem(countItem - 1);
     }
 
     const handleAddProductToCart = () => {
+        const productExists = count.find((item) => item.id === productId);
 
-    
-        const productFind = count.filter(item => item.id === productId)
-        if (productFind){
-            const newCount = count.map(item => {
-                if (item.id === productId){
-                    return {
-                        ...item,
-                        quantity: item.quantity + countItem
-                    }
-                } else {
-                    return item
-                }
-            });
-            setCount(newCount);
-        }
-        setCountItem(1);
-    };
+        if (productExists){
+            setCount(
+                count.map((item) => 
+                item.id === productId
+                    ? {...item, quantity: item.quantity + countItem}
+                    : item
+                )
+            );
+            } else {
+                setCount([...count, {id: productId, quantity: countItem}]);
+            }
+
+            setCountItem(1);
+
+        };
 
     return (
         <div>
