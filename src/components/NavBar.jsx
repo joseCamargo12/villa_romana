@@ -33,9 +33,8 @@ const NavBar = () => {
                       <Nav.Link href="#action2" style={{ marginRight: '15px' }}>Contacto</Nav.Link>
                   </Nav>
               </Navbar.Collapse>
-  
-              {/* <Link to="/create-product">Crear producto</Link> */}
               <CartWidget />
+              <Link to="/create-product">➕</Link>
           </Navbar>
       </Container>
   );

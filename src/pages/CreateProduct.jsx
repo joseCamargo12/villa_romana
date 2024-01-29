@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { useGetCategories } from "../hooks/useProducts";
+import '../styles/Create.css';
 
 const CreateProduct = () => {
 
@@ -43,7 +44,7 @@ const CreateProduct = () => {
   };
 
   return (
-    <div>
+    <div class="creador">
       <h1>Crear producto</h1>
       <input type="text" placeholder="Titulo" value={title} onChange={(e) => setTitle(e.target.value)} />
       <input type="text" placeholder="Descripcion" value={description} onChange={(e) => setDescription(e.target.value)} />
